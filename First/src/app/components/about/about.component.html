@@ -1,0 +1,30 @@
+<div class="container py-5 my-4">
+    <div class=" m-auto " style="width: 18rem;">
+        <div class=" card" [attr.data-index]="selectedObj.id">
+            <img [src]="selectedObj.imgSrc" class="card-img-top" [alt]="selectedObj.name">
+            <div class="card-body">
+                <h5 class="card-title">{{selectedObj.name}}</h5>
+                <p class="card-text">{{selectedObj.description}}</p>
+                <div class="d-flex gap-3">
+                    <button [disabled]="selectedObj.isSold">Buy Now</button>
+                    <span [style.display]="selectedObj.isSold ===true ? 'inline' : 'none' " [class]="{
+                'text-danger' : selectedObj.isSold ,
+                'fw-bold':selectedObj.isSold,
+                'bg-danger-subtle':selectedObj.isSold,
+                'p-2':selectedObj.isSold,
+                'rounded-circle':selectedObj.isSold
+            }">Solded x </span>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="d-flex justify-content-between align-items-center py-3">
+            <button (click)=" cardDetails(-1)" class="btn btn-primary">Prev</button>
+            <button (click)="cardDetails(+1)" class="btn btn-primary">Next</button>
+        </div>
+
+    </div>
+
+</div>
