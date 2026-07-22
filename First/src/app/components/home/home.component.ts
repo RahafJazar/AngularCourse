@@ -14,4 +14,8 @@ export class HomeComponent {
   test(): string {
     return "anfular course 1 ";
   }
+
+  friends: string[] = [
+    "Ahmad", "Ali", "samer", "SAmi"
+  ]
 }
