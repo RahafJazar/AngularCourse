@@ -1,0 +1,24 @@
+<p>gallery works!</p>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div>
+                    <ul class="d-flex  gap-4 ">
+                        <li><a routerLink="mobile" routerLinkActive="bg-success text-white rounded-2">Mobile</a></li>
+                        <li><a routerLink="laptop" routerLinkActive="bg-success text-white rounded-2 ">Laptop</a></li>
+                        <li><a routerLink="tv" routerLinkActive="bg-success text-white rounded-2">TV</a> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="bg-secondary p-4">
+                    <!---tv,mobile,laptop-->
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
