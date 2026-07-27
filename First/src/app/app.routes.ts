@@ -16,9 +16,10 @@ export const routes: Routes = [
     { path: 'notFound', component: NotFoundComponent, title: "Route |Not Found  Page" },
     {
         path: 'gallery', component: GalleryComponent, title: "Route |Gallery page", children: [
+            { path: '', redirectTo: 'laptop', pathMatch: 'full' },
             { path: 'laptop', component: LaptopComponent, title: 'Route |Gallery page |Laptop' },
             { path: 'mobile', component: MobileComponent, title: 'Route |Gallery page |Mobile' },
-            { path: 'tv', component: TvComponent, title: 'Route |Gallery page |TV' }
+            { path: 'tv', component: TvComponent, title: 'Route |Gallery page |TV' },
         ]
     },
     { path: "**", redirectTo: 'notFound', pathMatch: "full" } //Not found path
