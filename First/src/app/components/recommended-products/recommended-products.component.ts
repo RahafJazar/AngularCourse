@@ -1,28 +1,13 @@
 import { Component } from '@angular/core';
 import { ProductData } from '../../product-data';
-import { FormsModule } from '@angular/forms';
-import { RecommendedProductsComponent } from '../recommended-products/recommended-products.component';
-import { ParentComponent } from '../parent/parent.component';
-import { ContactComponent } from '../contact/contact.component';
-import { LaptopComponent } from '../laptop/laptop.component';
-import { MobileComponent } from '../mobile/mobile.component';
-import { FooterComponent } from "../footer/footer.component";
-import { GalleryComponent } from "../gallery/gallery.component";
+
 @Component({
-  selector: 'app-home',
-  imports: [FormsModule, RecommendedProductsComponent, ParentComponent, ContactComponent, LaptopComponent, MobileComponent, FooterComponent, GalleryComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  selector: 'app-recommended-products',
+  imports: [],
+  templateUrl: './recommended-products.component.html',
+  styleUrl: './recommended-products.component.css',
 })
-export class HomeComponent {
-  userName: string = "Reda ";
-  userAge: number = 28;
-  userSalary: number = 7000;
-
-  test(): string {
-    return "anfular course 1 ";
-  }
-
+export class RecommendedProductsComponent {
   productList: ProductData[] = [
     {
       id: 1,
@@ -275,5 +260,4 @@ export class HomeComponent {
   ];
 
   role: string = 'user';
-  username: string = "";
 }
