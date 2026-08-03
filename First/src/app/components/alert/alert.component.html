@@ -1,0 +1,24 @@
+<div class="custom-alert d-flex align-items-start gap-3 " role="alert">
+    <div class="alert-icon ">
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="flex-grow-1">
+        <h5 class="alert-title mb-1">
+            <span class="alert-title">Success</span>
+        </h5>
+        <hr>
+        <ng-content select="button"></ng-content>
+        <hr>
+        <div class="alert-message">
+            Your account has been created successfully
+        </div>
+        <hr>
+        <ng-content />
+        <hr>
+    </div>
+    <button type="button" class="btn-close" aria-label="Close">
+        <i class="fa-xmark"></i>
+    </button>
+
+
+</div>

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ProductData } from '../../product-data';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-recommended-products',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './recommended-products.component.html',
   styleUrl: './recommended-products.component.css',
 })

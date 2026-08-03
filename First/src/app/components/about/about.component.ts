@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AlertComponent } from "../alert/alert.component";
+import { MyBtnComponent } from "../my-btn/my-btn.component";
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [AlertComponent, MyBtnComponent, ChildComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
@@ -56,6 +59,16 @@ export class AboutComponent {
       isSold: this.data[this.index].isSold
     }
 
+
+  }
+
+  username: string = "Ahmad Kahlil Alqudah";
+  dataFromChild: string = '';
+  valueFromTRV !: HTMLHeadingElement;
+
+  @ViewChild('heading') element !: ElementRef;
+  test(): void {
+    console.log(this.element);
 
   }
 }

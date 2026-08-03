@@ -4,6 +4,9 @@
         aria-label=".form-control-lg example" [(ngModel)]="username">
     data :{{username}}
 </div>
+<app-alert>
+    Hello Alert From Home
+</app-alert>
 
 <div class="title bg-success p-2 shadow rounded text-center  text-white">
     <h2>All products</h2>
@@ -35,7 +38,7 @@
 <p>Lorem ipsum dolor sit amet.</p>
 }
 <section>
-    <!------All product --------->
+
     <div class="row title text-center">
         @if(role ==='admin'){
         <h1>Hello,Admin</h1>
@@ -50,45 +53,14 @@
     <div class="row g-4">
         @for(product of productList;track product.id){
 
-        @if(product.onSale){
+
         <div class="col-6 col-md-4 col-lg-3 ">
-            <div class="card border-3 h-100 " [class]="{
-            'border-success':product.onSale,
-            'border-danger':!product.onSale ,
-            'bg-warning':$first,
-            'bg-info':$last,
-           
-            }">
-                <p>Index :{{$index}}</p>
-                <p>count :{{$count}}</p>
-
-                <img [src]="product.imageCover" class="card-img-top" alt="..." height="300px">
-                <div class="card-body">
-                    <h3 class="card-title h5">{{product.title}}</h3>
-                    <p class="card-text">{{product.description}}</p>
-                    <div class="d-flex flex-wrap justify-content-between">
-                        <span class="fw-semibold">Price {{product.price}}EGP</span>
-                        <span class="fw-semibold">Quantity :{{product.quantity}}</span>
-                    </div>
-                    <div class="row">
-                        @for (imgPath of product.images; track $index) {
-                        <div class="col-3">
-                            <div>
-                                <img [src]="imgPath" [alt]="product.title" class="w-100">
-                            </div>
-                        </div>
-
-                        }
-
-                    </div>
-                </div>
-
-            </div>
+            <app-card [myData]="product" [first]="$first" [last]="$last" [count]="$count" [index]="$index"></app-card>
 
         </div>
         }
 
-        }
+
         @empty {
         <div class="alert alert-light" role="alert">
             No Products Found ...
@@ -102,12 +74,8 @@
         <div class="title my-4 ">
             <h2>Recommended products</h2>
         </div>
-        <!-- @defer (on idle) {
-        <app-parent></app-parent>
-        }
-        @defer (on immediate) {
-        <app-recommended-products></app-recommended-products>
-        } -->
+
+
         @defer (on interaction) {
         <app-recommended-products></app-recommended-products>
         }
@@ -115,19 +83,26 @@
         <h2 class="bg-info w-50 m-auto text-white">show more </h2>
         }
 
-        @defer(on interaction(parentComp)){
-        <app-parent></app-parent>
-        }
 
-        @defer(on hover){
-        <app-contact></app-contact>
-        }
-        @placeholder {
-        <h4 class="bg-warning">show contact page </h4>
-        }
-
-        @defer (on hover(contComp)) {
-        <app-contact></app-contact>
-        }
     </div>
 </section>
+
+
+<div class="w-50 m-auto bg-warning text-center text-white p-3">
+    <h1>Hello component</h1>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores alias, eos omnis amet vel quos! Laudantium
+        dolores ullam, porro rem qui ratione consequuntur cumque, fuga asperiores eos reprehenderit distinctio in.
+    </p>
+    <hr>
+    <app-alert>
+
+        <p>Alert From Home</p>
+        <span class="d-block">Hello Alert</span>
+        <button class="btn btn-primary text-white">Click Alert Home </button>
+    </app-alert>
+    <app-my-btn>
+        <span>From Home</span>
+    </app-my-btn>
+</div>k

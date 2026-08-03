@@ -1,0 +1,30 @@
+.custom-alert {
+    background-color: rgb(201, 212, 201);
+    border-left: 2px solid green;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.alert-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    padding: 4px;
+
+}
+
+.alert-title {
+    color: black;
+}
+
+.alert-message {
+    color: green;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.btn-close {
+    flex-shrink: 0;
+    font-size: 12px;
+}

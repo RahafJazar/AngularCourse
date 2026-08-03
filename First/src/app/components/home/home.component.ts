@@ -8,9 +8,13 @@ import { LaptopComponent } from '../laptop/laptop.component';
 import { MobileComponent } from '../mobile/mobile.component';
 import { FooterComponent } from "../footer/footer.component";
 import { GalleryComponent } from "../gallery/gallery.component";
+import { AboutComponent } from "../about/about.component";
+import { AlertComponent } from "../alert/alert.component";
+import { MyBtnComponent } from "../my-btn/my-btn.component";
+import { CardComponent } from "../card/card.component";
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, RecommendedProductsComponent, ParentComponent, ContactComponent, LaptopComponent, MobileComponent, FooterComponent, GalleryComponent],
+  imports: [FormsModule, RecommendedProductsComponent, ParentComponent, ContactComponent, LaptopComponent, MobileComponent, FooterComponent, GalleryComponent, AboutComponent, AlertComponent, MyBtnComponent, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

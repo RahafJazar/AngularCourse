@@ -5,39 +5,8 @@
 
     @if(product.onSale){
     <div class="col-6 col-md-4 col-lg-3 ">
-        <div class="card border-3 h-100 " [class]="{
-            'border-success':product.onSale,
-            'border-danger':!product.onSale ,
-            'bg-warning':$first,
-            'bg-info':$last,
-           
-            }">
-            <p>Index :{{$index}}</p>
-            <p>count :{{$count}}</p>
 
-            <img [src]="product.imageCover" class="card-img-top" alt="..." height="300px">
-            <div class="card-body">
-                <h3 class="card-title h5">{{product.title}}</h3>
-                <p class="card-text">{{product.description}}</p>
-                <div class="d-flex flex-wrap justify-content-between">
-                    <span class="fw-semibold">Price {{product.price}}EGP</span>
-                    <span class="fw-semibold">Quantity :{{product.quantity}}</span>
-                </div>
-                <div class="row">
-                    @for (imgPath of product.images; track $index) {
-                    <div class="col-3">
-                        <div>
-                            <img [src]="imgPath" [alt]="product.title" class="w-100">
-                        </div>
-                    </div>
-
-                    }
-
-                </div>
-            </div>
-
-        </div>
-
+        <app-card [myData]="product"></app-card>
     </div>
     }
 
