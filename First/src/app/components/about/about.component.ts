@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { AlertComponent } from "../alert/alert.component";
 import { MyBtnComponent } from "../my-btn/my-btn.component";
 import { ChildComponent } from '../child/child.component';
@@ -67,8 +67,9 @@ export class AboutComponent {
   valueFromTRV !: HTMLHeadingElement;
 
   @ViewChild('heading') element !: ElementRef;
+  @ViewChildren('pag1') elements !: QueryList<ElementRef>
   test(): void {
-    console.log(this.element);
+    console.log(this.elements);
 
   }
 }
