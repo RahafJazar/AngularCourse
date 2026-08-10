@@ -2,10 +2,11 @@ import { Conditional } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
 import { MyBtnComponent } from "../my-btn/my-btn.component";
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [AlertComponent, MyBtnComponent],
+  imports: [AlertComponent, MyBtnComponent, AboutComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
