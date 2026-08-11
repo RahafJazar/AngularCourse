@@ -62,8 +62,19 @@
     <button (click)="test()">Template reference variable</button>
 </div> -->
 
-<p> Parent component</p>
+<!-- <p> Parent component</p>
 <h2 #heading>Hello About Component</h2>
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus asperiores eaque fugit rerum? Tempore minus culpa
     doloribus laboriosam facere sunt laborum eius perferendis tempora quod animi, odio sint, delectus distinctio.</p>
-<p>{{salary}}</p>
+<p>{{salary}}</p> -->
+
+
+<ul>
+    @for (friend of friendsAbout; track $index) {
+    <li>
+        {{friend}}
+    </li>
+
+    }
+
+</ul>

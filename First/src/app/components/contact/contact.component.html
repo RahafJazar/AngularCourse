@@ -39,5 +39,12 @@
         <span>From Contact</span>
     </app-my-btn>
 </div> -->
+<ul>
+    @for (friend of friendsContact; track $index) {
+    <li>
+        {{friend}}
+    </li>
 
-<app-about [salary]="'4'"></app-about>
+    }
+
+</ul>

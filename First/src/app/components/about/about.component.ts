@@ -1,15 +1,17 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, inject, Input, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import { AlertComponent } from "../alert/alert.component";
 import { MyBtnComponent } from "../my-btn/my-btn.component";
 import { ChildComponent } from '../child/child.component';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-about',
   imports: [AlertComponent, MyBtnComponent, ChildComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
+  providers: [DataService]
 })
-export class AboutComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+export class AboutComponent implements OnInit {
   @ViewChild('heading') myTemp !: ElementRef;
   @Input() salary: string = "";
   // data: { id: number, name: string, model: number, description: string, imgSrc: string, isSold: boolean }[] = [
@@ -75,40 +77,50 @@ export class AboutComponent implements OnChanges, OnInit, DoCheck, AfterContentI
 
   // }
 
+  // constructor() {
+  //   console.log(" %cHello Constructor ", 'color:green');
+  //   console.log("my temp in constructor is : ", this.myTemp);
+  // }
+  // ngDoCheck(): void {
+  //   console.log('%c Hello ngDoCheck ', 'color:#c29f3f');
+  //   console.log("my temp in ngDoCheck is : ", this.myTemp);
+  // }
+  // ngAfterContentInit(): void {
+  //   console.log('%c Hello ngAfterContentInit ', 'color:#ec414f');
+  //   console.log("my temp in ngAfterContentInit is : ", this.myTemp);
+  // }
+  // ngAfterContentChecked(): void {
+  //   console.log('%c Hello ngAfterContentChecked ', 'color:#79e91e');
+  //   console.log("my temp in ngAfterContentChecked is : ", this.myTemp);
+  // }
+  // ngAfterViewChecked(): void {
+  //   console.log('%c Hello ngAfterViewChecked ', 'color:#667043');
+  //   console.log("my temp in ngAfterViewChecked is : ", this.myTemp);
+  // }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('%c Hello ngOnChanges ', 'color:blue');
+  //   console.log("my temp in ngOnChanges is : ", this.myTemp);
+  // }
+  // ngOnInit(): void {
+  //   console.log('%c Hello ngOnInit ', 'color:yellow');
+  //   console.log("my temp in ngOnInit is : ", this.myTemp);
+  // }
+  // ngAfterViewInit() {
+  //   console.log("%cHello ngAfterViewInit", 'color:pink');
+  //   console.log("my temp in ngAfterViewInit is : ", this.myTemp);
+  // }
+  // ngOnDestroy(): void {
+  //   console.log("%cHello ngOnDestroy", 'color:#8d63b4');
+  //   console.log("my temp in ngOnDestroy is : ", this.myTemp);
+  // }
+
+  friendsAbout: string[] = [];
+  dataService: DataService = inject(DataService);
   constructor() {
-    console.log(" %cHello Constructor ", 'color:green');
-    console.log("my temp in constructor is : ", this.myTemp);
+    this.friendsAbout = this.dataService.friends;
   }
-  ngDoCheck(): void {
-    console.log('%c Hello ngDoCheck ', 'color:#c29f3f');
-    console.log("my temp in ngDoCheck is : ", this.myTemp);
-  }
-  ngAfterContentInit(): void {
-    console.log('%c Hello ngAfterContentInit ', 'color:#ec414f');
-    console.log("my temp in ngAfterContentInit is : ", this.myTemp);
-  }
-  ngAfterContentChecked(): void {
-    console.log('%c Hello ngAfterContentChecked ', 'color:#79e91e');
-    console.log("my temp in ngAfterContentChecked is : ", this.myTemp);
-  }
-  ngAfterViewChecked(): void {
-    console.log('%c Hello ngAfterViewChecked ', 'color:#667043');
-    console.log("my temp in ngAfterViewChecked is : ", this.myTemp);
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('%c Hello ngOnChanges ', 'color:blue');
-    console.log("my temp in ngOnChanges is : ", this.myTemp);
-  }
+
   ngOnInit(): void {
-    console.log('%c Hello ngOnInit ', 'color:yellow');
-    console.log("my temp in ngOnInit is : ", this.myTemp);
-  }
-  ngAfterViewInit() {
-    console.log("%cHello ngAfterViewInit", 'color:pink');
-    console.log("my temp in ngAfterViewInit is : ", this.myTemp);
-  }
-  ngOnDestroy(): void {
-    console.log("%cHello ngOnDestroy", 'color:#8d63b4');
-    console.log("my temp in ngOnDestroy is : ", this.myTemp);
+
   }
 }

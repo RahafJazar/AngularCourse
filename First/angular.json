@@ -9,6 +9,12 @@
         "@schematics/angular:component": {
           "type": "component",
           "skipTests": true
+        },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
         }
       },
       "root": "",
