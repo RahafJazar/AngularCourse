@@ -40,39 +40,90 @@ export class AboutComponent {
       isSold: false
     },
 
-  ]
-  index: number = 0;
+    // ]
+    // index: number = 0;
 
-  selectedObj: { id?: number, name?: string, model?: number, description?: string, imgSrc?: string, isSold?: boolean } = this.data[0]
+    // selectedObj: { id?: number, name?: string, model?: number, description?: string, imgSrc?: string, isSold?: boolean } = this.data[0]
 
-  cardDetails(sign: number) {
-    this.index += sign;
-    if (this.index < 0) {
-      this.index = this.data.length - 1;
+    // cardDetails(sign: number) {
+    //   this.index += sign;
+    //   if (this.index < 0) {
+    //     this.index = this.data.length - 1;
+    //   }
+    //   if (this.index > this.data.length - 1) {
+    //     this.index = 0;
+    //   }
+    //   this.selectedObj = {
+    //     id: this.data[this.index].id,
+    //     name: this.data[this.index].name,
+    //     model: this.data[this.index].model,
+    //     description: this.data[this.index].description,
+    //     imgSrc: this.data[this.index].imgSrc,
+    //     isSold: this.data[this.index].isSold
+    //   }
+
+
+    // }
+
+    // username: string = "Ahmad Kahlil Alqudah";
+    // dataFromChild: string = '';
+    // valueFromTRV !: HTMLHeadingElement;
+
+    // @ViewChild('heading') element !: ElementRef;
+    // @ViewChildren('pag1') elements !: QueryList<ElementRef>
+    // test(): void {
+    //   console.log(this.elements);
+
+    // }
+
+    // constructor() {
+    //   console.log(" %cHello Constructor ", 'color:green');
+    //   console.log("my temp in constructor is : ", this.myTemp);
+    // }
+    // ngDoCheck(): void {
+    //   console.log('%c Hello ngDoCheck ', 'color:#c29f3f');
+    //   console.log("my temp in ngDoCheck is : ", this.myTemp);
+    // }
+    // ngAfterContentInit(): void {
+    //   console.log('%c Hello ngAfterContentInit ', 'color:#ec414f');
+    //   console.log("my temp in ngAfterContentInit is : ", this.myTemp);
+    // }
+    // ngAfterContentChecked(): void {
+    //   console.log('%c Hello ngAfterContentChecked ', 'color:#79e91e');
+    //   console.log("my temp in ngAfterContentChecked is : ", this.myTemp);
+    // }
+    // ngAfterViewChecked(): void {
+    //   console.log('%c Hello ngAfterViewChecked ', 'color:#667043');
+    //   console.log("my temp in ngAfterViewChecked is : ", this.myTemp);
+    // }
+    // ngOnChanges(changes: SimpleChanges): void {
+    //   console.log('%c Hello ngOnChanges ', 'color:blue');
+    //   console.log("my temp in ngOnChanges is : ", this.myTemp);
+    // }
+    // ngOnInit(): void {
+    //   console.log('%c Hello ngOnInit ', 'color:yellow');
+    //   console.log("my temp in ngOnInit is : ", this.myTemp);
+    // }
+    // ngAfterViewInit() {
+    //   console.log("%cHello ngAfterViewInit", 'color:pink');
+    //   console.log("my temp in ngAfterViewInit is : ", this.myTemp);
+    // }
+    // ngOnDestroy(): void {
+    //   console.log("%cHello ngOnDestroy", 'color:#8d63b4');
+    //   console.log("my temp in ngOnDestroy is : ", this.myTemp);
+    // }
+
+    friendsAbout: string[] = [];
+    dataService: DataService = inject(DataService);
+    constructor() {
+      this.friendsAbout = this.dataService.friends;
     }
-    if (this.index > this.data.length - 1) {
-      this.index = 0;
-    }
-    this.selectedObj = {
-      id: this.data[this.index].id,
-      name: this.data[this.index].name,
-      model: this.data[this.index].model,
-      description: this.data[this.index].description,
-      imgSrc: this.data[this.index].imgSrc,
-      isSold: this.data[this.index].isSold
+
+  ngOnInit(): void {
+
     }
 
 
-  }
 
-  username: string = "Ahmad Kahlil Alqudah";
-  dataFromChild: string = '';
-  valueFromTRV !: HTMLHeadingElement;
 
-  @ViewChild('heading') element !: ElementRef;
-  @ViewChildren('pag1') elements !: QueryList<ElementRef>
-  test(): void {
-    console.log(this.elements);
-
-  }
 }

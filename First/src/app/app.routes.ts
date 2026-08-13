@@ -12,6 +12,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadComponent: () => import('./components/home/home.component').then((c) => c.HomeComponent), title: "Route |Home Page " },
     { path: 'about', loadComponent: () => import('./components/about/about.component').then((c) => c.AboutComponent), title: "Route |About Page " },
+    { path: 'products', loadComponent: () => import('./components/products/products.component').then((c) => c.ProductsComponent), title: 'Route|Products Page' },
     { path: 'contact', component: ContactComponent, title: "Route |Contact Page " },
     { path: 'notFound', component: NotFoundComponent, title: "Route |Not Found  Page" },
     {
