@@ -1,15 +1,18 @@
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, viewChild, ViewChild, ViewChildren } from '@angular/core';
 import { AlertComponent } from "../alert/alert.component";
 import { MyBtnComponent } from "../my-btn/my-btn.component";
 import { ChildComponent } from '../child/child.component';
+import { ModelComponent } from "../model/model.component";
 
 @Component({
   selector: 'app-about',
-  imports: [AlertComponent, MyBtnComponent, ChildComponent],
+  imports: [AlertComponent, MyBtnComponent, ChildComponent, ModelComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
+
+  @ViewChild(ModelComponent) modeldata !: ModelComponent
   data: { id: number, name: string, model: number, description: string, imgSrc: string, isSold: boolean }[] = [
     {
       id: 1,
