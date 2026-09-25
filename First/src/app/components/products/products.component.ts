@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -28,5 +28,9 @@ export class ProductsComponent implements OnInit {
     });
 
 
+  }
+  @HostListener('click')
+  test(): void {
+    console.log("element clicked")
   }
 }
